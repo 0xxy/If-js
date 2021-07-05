@@ -1,11 +1,23 @@
 {
-  "name": "if",
+  "name": "enter",
   "version": "1.0.0",
-  "description": "",
+  "description": "enter",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xxy/If-js.git"
+  },
+  "author": "kate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xxy/If-js/issues"
+  },
+  "homepage": "https://github.com/0xxy/If-js#readme",
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "husky": "^7.0.0"
+  }
 }
