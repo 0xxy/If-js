@@ -1,14 +1,19 @@
 let user='John Doe';
+console.log('user = '+ user);
+
 let student='Kate';
+console.log('student = '+ student);
 
-user=student;
-
-console.log('user = ', user);
+user=student; // Kate
+console.log('user = '+ user);
 
 let test = 1;
 test += 1;
 test = test + '1'; //21 
-test -= 1; //2
-test = !!(test); // true
+console.log(test);
 
-console.log('test = '+ test);
+test -= 1; //20
+console.log(test);
+
+test = !!(test); // true
+console.log(test);
