@@ -15,7 +15,7 @@ for(let i = 0; i < array2.length; i++){
 
 let array3 = [2, 5, 8, 15, 0, 6, 20, 3];
 for(let i = 0; i < array2.length; i++){
-  if(array3[i] % 2 == 0){
+  if(array3[i] % 2 === 0){
     console.log(array3[i]);
   }
 }
