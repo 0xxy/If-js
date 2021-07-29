@@ -7,20 +7,21 @@ function sum(a){
 console.log(sum(5)(2));
 
 const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-const text = document.getElementsByTagName('p');
+const text1 = document.getElementsById('text1');
+const text2 = document.getElementsById('text2');
+const text3 = document.getElementsById('text3');
 
-let changeParagraphColor = function(){
-  let i = 0;
-  return function(){
-    this.style.color = colors[i];
-    i++;
-    
-    if (i == colors.length){
-      i = 0;
-    }
+const changeColor = () =>
+let count = 0;
+return () => {
+  this.style.color = colors[count];
+  count++;
+  
+  if (count == colors.length){
+    count = 0;
   }
 }
 
-for (let i = 0; i < text.length; i++){
-  text[i].addEventListener('click', changeParagraphColor());
-}
+text1.addEventListener('click', changeColor.bind(null, text1));
+text2.addEventListener('click', changeColor.bind(null, text2));
+text3.addEventListener('click', changeColor.bind(null, text3));
