@@ -161,33 +161,38 @@ const hotels = [
   },
 ];
 
-const placeInfo = (dataName) => {
-  const regexp = new RegExp(dataName, 'igm');
+// const placeInfo = (dataName) => {
+//   const regexp = new RegExp(dataName, 'igm');
 
-  return data.filter((dataInfo) =>{
-    if(regexp.test(dataInfo.country + dataInfo.city + dataInfo.hotel)){
-      return `country: ${dataInfo.country}, city: ${dataInfo.city}, hotel: ${dataInfo.hotel}` || 'no info';
-    }
-  }); 
+//   return data.filter((dataInfo) =>{
+//     if(regexp.test(dataInfo.country + dataInfo.city + dataInfo.hotel)){
+//       return `country: ${dataInfo.country}, city: ${dataInfo.city}, hotel: ${dataInfo.hotel}` || 'no info';
+//     }
+//   }); 
+// }
+
+// console.log(placeInfo('Germany'));
+// console.log(placeInfo('Anapa'));
+
+function uniqueCountries() {
+  const arr = [... arguments];
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(...arr[i])
+  }
+    
+  newArr = new Set(newArr);
+  return [...newArr];
+  
 }
 
-console.log(placeInfo('Germany'));
-console.log(placeInfo('Anapa'));
+console.log( uniqueCountries(hotels) ); 
 
-const uniqCountries = (countriesName) =>{
-  let result =[];
+// let result =[];
+// hotels.filter(function(uniqCountries){
+//   let i = result.findIndex(x => (x.country == uniqCountries.country && x.city == uniqCountries.city));
+//   if(i <= -1){
+//     result.push(uniqCountries);
+//   }
 
-  return hotels.map((hotelsInfo) => {
-    if(hotelsInfo.country){
-      result = (`${hotelsInfo.country}: [${hotelsInfo.name}, ${hotelsInfo.city}]`);  
-   }
-
-   return result || 'no info';
-
-  });
-}
-
-console.log(uniqCountries('UK'));
-console.log(uniqCountries('Gdansk'));
-console.log(uniqCountries('Bialorus'));
-
+//   return null;
