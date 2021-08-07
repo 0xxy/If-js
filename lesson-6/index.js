@@ -47,17 +47,14 @@ const data = [
   },
 ];
 
-let placeInfo = (dataName) => {
-  let list = '';
+const placeInfo = (dataName) => {
   const regexp = new RegExp(dataName, 'igm');
 
-  data.forEach((dataInfo) =>{
+  return data.filter((dataInfo) =>{
     if(regexp.test(dataInfo.country + dataInfo.city + dataInfo.hotel)){
-      list = `country: ${dataInfo.country}, city: ${dataInfo.city}, hotel: ${dataInfo.hotel}`;
+      return `country: ${dataInfo.country}, city: ${dataInfo.city}, hotel: ${dataInfo.hotel}` || 'no info';
     }
   }); 
-  
-  return list || 'no info';
 }
 
 console.log(placeInfo('Germany'));
