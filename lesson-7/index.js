@@ -178,8 +178,12 @@ let uniqCountry = hotels.reduce((acc, item) => {
   if(!acc[item.country]){
     acc[item.country] = [item.city];
   }
-
+  else{
+    acc[item.country].push(item.city);
+  }
+  
   return acc;
+
 }, {});
 
 console.log(uniqCountry);
