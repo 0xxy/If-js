@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 let changeDataPlaces = (date) => date = date.split('-').reverse().join('.');
 
 res = changeDataPlaces('2020-11-26');
 
 console.log(res);
+=======
+const changeDataPlaces = (date) => date = date.split('-').reverse().join('.');
+
+console.log(changeDataPlaces('2020-11-26'));
+>>>>>>> master
 
 const data = [
   {
@@ -52,7 +58,7 @@ const placeInfo = (dataName) => {
 
   return data.filter((dataInfo) =>{
     if(regexp.test(dataInfo.country + dataInfo.city + dataInfo.hotel)){
-      return `country: ${dataInfo.country}, city: ${dataInfo.city}, hotel: ${dataInfo.hotel}` || 'no info';
+      return dataInfo || 'no info';
     }
   }); 
 }
