@@ -31,6 +31,10 @@ const obj3 = {
 
 const deepEqual = (object1, object2) => {
   if (object1 === object2) return true; 
+
+  if (object1 == null, typeof object1 != 'object' || object2 == null, typeof object2 != 'object'){
+    return false;
+  }
   
  const firstObj = Object.keys(object1);
  const secondObj = Object.keys(object2);
