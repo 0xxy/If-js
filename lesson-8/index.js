@@ -32,14 +32,15 @@ const obj3 = {
 const deepEqual = (object1, object2) => {
   if (object1 === object2) return true; 
   
-  let keysA = Object.keys(object1), keysB = Object.keys(object2);
+ const firstObj = Object.keys(object1);
+ const secondObj = Object.keys(object2);
 
-  if (keysA.length != keysB.length){
+  if (firstObj.length != secondObj.length){
     return false;
   } 
 
-  for (let key of keysA) {
-    if (!keysB.includes(key) || !deepEqual(object1[key], object2[key])) return false;
+  for (let key of firstObj) {
+    if (!secondObj.includes(key) || !deepEqual(object1[key], object2[key])) return false;
   }
 
     return true;
