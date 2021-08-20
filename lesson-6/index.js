@@ -1,6 +1,14 @@
+<<<<<<< HEAD
+let changeDataPlaces = (date) => date = date.split('-').reverse().join('.');
+
+res = changeDataPlaces('2020-11-26');
+
+console.log(res);
+=======
 const changeDataPlaces = (date) => date = date.split('-').reverse().join('.');
 
 console.log(changeDataPlaces('2020-11-26'));
+>>>>>>> master
 
 const data = [
   {
