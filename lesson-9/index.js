@@ -55,23 +55,19 @@ const studentsData = [
 ];
 
 class Students{
-  constructor(studentsData){
+  constructor([studentsData]){
     this.firstName = studentsData.firstName;
     this.lastName = studentsData.lastName;
     this.admissionYear = studentsData.admissionYear;
     this.courseName = studentsData.courseName;
   }
 
-  get fullName() {
-    return this.firstName + ' ' + this.lastName;
-  }
-
-  get course(){
-    return new Date().getFullYear() - this.admissionYear;
-  }
-
   getInfo(){
-    studentsData.sort();
+    let fullName = this.firstName + ' ' + this.lastName;
+    let course = new Date().getFullYear() - this.admissionYear;
+
+    studentsData.sort((a, b) => a - b);
+    return `${fullName} - ${this.courseName}, ${course} курс`;
   }
 }
 
