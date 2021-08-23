@@ -1,5 +1,5 @@
 class User {
-  constructor( firstName, lastName ) {
+  constructor({ firstName, lastName }) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
@@ -9,14 +9,14 @@ class User {
   }
 }
 
-let user = new User('Artem', 'Flex');
-console.log(user.fullName);
+// let user = new User('Artem', 'Flex');
+// console.log(user.fullName);
 
-class Student extends User{
-  constructor( firstName, lastName, admissionYear, courseName ){
-    super( firstName, lastName );
-    this.admissionYear = admissionYear;
-    this.courseName = courseName;
+class Student extends User {
+  constructor(studentData) {
+    super(studentData);
+    this.admissionYear = studentData.admissionYear;
+    this.courseName = studentData.courseName;
   }
 
   get course(){
@@ -24,8 +24,8 @@ class Student extends User{
   }
 }
 
-let student = new Student('Leonid', 'Pug', 2010, 'pp');
-console.log(student.course);
+// let student = new Student('Leonid', 'Pug', 2010, 'pp');
+// console.log(student.course);
 
 const studentsData = [
   {
@@ -54,20 +54,16 @@ const studentsData = [
   }
 ];
 
-class Students{
-  constructor([studentsData]){
-    this.firstName = studentsData.firstName;
-    this.lastName = studentsData.lastName;
-    this.admissionYear = studentsData.admissionYear;
-    this.courseName = studentsData.courseName;
+class Students {
+  constructor(studentsData) {
+    this.students = studentsData;
   }
 
-  getInfo(){
-    let fullName = this.firstName + ' ' + this.lastName;
-    let course = new Date().getFullYear() - this.admissionYear;
-
-    studentsData.sort((a, b) => a - b);
-    return `${fullName} - ${this.courseName}, ${course} курс`;
+  getInfo() {
+    return this.students.sort((a, b) => b.admissionYear - a.admissionYear).map((student) => {
+      const newStudent = new Student(student);
+      return `${newStudent.fullName} - ${newStudent.courseName}, ${newStudent.course} курс`;
+    });
   }
 }
 
