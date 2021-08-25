@@ -20,12 +20,15 @@ const colors = {
 };
 
 for (let color of colors) {
-  text1.getElementById(`text1`).style.color = color.color;
+  text1.style.color = color.color;
+  text2.style.color = color.color;
+  text3.style.color = color.color;
 }
 
 const changeStyle = id => event => {
   event.target.style.color = colors.next(id).value;
 };
+
 
 text1.addEventListener('click', changeStyle(text1));
 text2.addEventListener('click', changeStyle(text2));
