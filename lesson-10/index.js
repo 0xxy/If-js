@@ -5,31 +5,31 @@ const text3 = document.getElementById('text3');
 const colors = {
   data: ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'],
   [Symbol.iterator]() {
-    return {
-      current: 0,
-      data: this.data,
-      next() {
-        this.current++;
-        return{
-          done: this.current == this.data.length,
-          value: { color: this.data[this.current], index: this.current }
-        };
-      } 
-    };
-  }
-};
+    return this; 
+  } ,
+  next() {
+    if (this.current === undefined) {
+      this.current = 0;
+    }
 
-for (let color of colors) {
-  text1.style.color = color.color;
-  text2.style.color = color.color;
-  text3.style.color = color.color;
-}
+    if (this.current < this.data.length) {
+      return {
+        done: false,
+        value: this.data[this.current++]
+      };
+    }
+      
+    if (this.data === this.data.length) {
+      this.current = 0;
+      this.next();
+    }
+  },
+};
 
 const changeStyle = id => event => {
   event.target.style.color = colors.next(id).value;
 };
 
-
-text1.addEventListener('click', changeStyle(text1));
-text2.addEventListener('click', changeStyle(text2));
-text3.addEventListener('click', changeStyle(text3));
+text1.addEventListener('click', changeStyle({ ...colors }));
+text2.addEventListener('click', changeStyle({ ...colors }));
+text3.addEventListener('click', changeStyle({ ...colors }));
