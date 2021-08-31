@@ -19,14 +19,14 @@ const colors = {
       };
     }
       
-    if (this.data === this.data.length) {
+    if (this.current === this.data.length) {
       this.current = 0;
-      this.next();
+      return this.next();
     }
   },
 };
 
-const changeStyle = ({...iterator}) => event => {
+const changeStyle = (iterator) => (event) => {
   event.target.style.color = iterator.next().value;
 };
 
