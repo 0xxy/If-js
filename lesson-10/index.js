@@ -26,8 +26,8 @@ const colors = {
   },
 };
 
-const changeStyle = id => event => {
-  event.target.style.color = colors.next(id).value;
+const changeStyle = ({...iterator}) => event => {
+  event.target.style.color = iterator.next().value;
 };
 
 text1.addEventListener('click', changeStyle({ ...colors }));
