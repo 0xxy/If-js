@@ -76,13 +76,15 @@ for (let elem of data) {
   imageHomeGuestLoves.classList.add('hotels__inform-img')
 
   imageHomeGuestLoves.setAttribute('src', elem.imageUrl);
-  // linkForImageHomeGuestLoves.setAttribute('href', #);
+  linkForImageHomeGuestLoves.setAttribute('href', '#');
 
   name.textContent = elem.name;
   city.textContent = elem.city;
   country.textContent = elem.country;
 
-  hotelsInform.appendChild(imageHomeGuestLoves);
+  linkForImageHomeGuestLoves.appendChild(imageHomeGuestLoves);
+
+  hotelsInform.appendChild(linkForImageHomeGuestLoves);
   hotelsInform.appendChild(name);
   hotelsInform.appendChild(city);
   hotelsInform.appendChild(country);
