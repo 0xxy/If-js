@@ -49,18 +49,11 @@ const data = [
   },
 ];
 
-const homesGuestsLoves = document.getElementsByClassName('js-homes-guests-loves');
-const contain = document.getElementsByClassName('js-contain');
-const containTitle = document.createElement('h2');
 const hotels = document.getElementsByClassName('js-hotels');
 let hotelsInform = document.createElement('div');
 
-containTitle.textContent = 'Homes guests loves';
-
-containTitle.classList.add('contain__title');
 hotelsInform.classList.add('hotels__inform');
 
-contain[0].prepend(containTitle);
 hotels[0].appendChild(hotelsInform);
 
 data.forEach(function(elem) {
