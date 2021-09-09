@@ -49,10 +49,10 @@ const data = [
   },
 ];
 
-const homesGuestsLoves = document.getElementsByClassName('homes-guests-loves');
-const contain = document.getElementsByClassName('contain');
+const homesGuestsLoves = document.getElementsByClassName('js-homes-guests-loves');
+const contain = document.getElementsByClassName('js-contain');
 const containTitle = document.createElement('h2');
-const hotels = document.getElementsByClassName('hotels');
+const hotels = document.getElementsByClassName('js-hotels');
 let hotelsInform = document.createElement('div');
 
 containTitle.textContent = 'Homes guests loves';
@@ -64,47 +64,12 @@ contain[0].prepend(containTitle);
 hotels[0].appendChild(hotelsInform);
 
 data.forEach(function(elem) {
-  const content = `<p>${elem.name}</p><p>${elem.city}</p><p>${elem.country}</p><a><img>${elem.imageUrl}</></a>`;
-  
-  // elem.name.classList.add('hotels__inform-name');
-  // elem.city.classList.add('hotels__inform-city');
-  // elem.country.classList.add('hotels__inform-city');
-  // elem.imageHomeGuestLoves.classList.add('hotels__inform-img')
+  const content = `
+  <a href="#"><img class='hotels__inform-img' src="${elem.imageUrl}" alt="${elem.name}"></a>
+  <p class='hotels__inform-name'>${elem.name}</p>
+  <p class='hotels__inform-city'>${elem.city}</p>
+  <p class='hotels__inform-city'>${elem.country}</p>
+  `;
 
-  hotelsInform.innerHTML = content;
+  hotelsInform.innerHTML += content;
 })
-
-// for (let elem of data){
-//   const content = `<p>${elem.name}</p><p>${elem.city}</p><p>${elem.country}</p><img>${elem.imageUrl}</>`
-//   // console.log(content)
-
-//   content.innerHTML = content;
-// }
-
-
-// for (let elem of data) {
-//   let name = document.createElement('p');
-//   let city = document.createElement('p');
-//   let country = document.createElement('p');
-//   let imageHomeGuestLoves = document.createElement('img');
-//   let linkForImageHomeGuestLoves = document.createElement('a');
-
-//   name.classList.add('hotels__inform-name');
-//   city.classList.add('hotels__inform-city');
-//   country.classList.add('hotels__inform-city');
-//   imageHomeGuestLoves.classList.add('hotels__inform-img')
-
-//   imageHomeGuestLoves.setAttribute('src', elem.imageUrl);
-//   linkForImageHomeGuestLoves.setAttribute('href', '#');
-
-//   name.textContent = elem.name;
-//   city.textContent = elem.city;
-//   country.textContent = elem.country;
-
-//   linkForImageHomeGuestLoves.appendChild(imageHomeGuestLoves);
-
-//   hotelsInform.appendChild(linkForImageHomeGuestLoves);
-//   hotelsInform.appendChild(name);
-//   hotelsInform.appendChild(city);
-//   hotelsInform.appendChild(country);
-// }
