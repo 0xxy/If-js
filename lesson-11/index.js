@@ -49,19 +49,14 @@ const data = [
   },
 ];
 
-const hotels = document.getElementsByClassName('js-hotels');
-let hotelsInform = document.createElement('div');
-
-hotelsInform.classList.add('hotels__inform');
-
-hotels[0].appendChild(hotelsInform);
+const hotelsInform = document.getElementById('hotels-inform');
 
 data.forEach(function(elem) {
   const content = `
-  <a href="#"><img class='hotels__inform-img' src="${elem.imageUrl}" alt="${elem.name}"></a>
-  <p class='hotels__inform-name'>${elem.name}</p>
-  <p class='hotels__inform-city'>${elem.city}</p>
-  <p class='hotels__inform-city'>${elem.country}</p>
+    <a href="#"><img class='hotels__inform-img' src="${elem.imageUrl}" alt="${elem.name}"></a>
+    <p class='hotels__inform-name'>${elem.name}</p>
+    <p class='hotels__inform-city'>${elem.city}</p>
+    <p class='hotels__inform-city'>${elem.country}</p>
   `;
 
   hotelsInform.innerHTML += content;
