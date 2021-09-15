@@ -1,6 +1,6 @@
-const urlHotelsContent = 'https://fe-student-api.herokuapp.com/api/hotels/popular';
+const urlHotelsContent = 'https://fe-student-api.herokuapp.com/api';
 
-fetch(urlHotelsContent) 
+fetch(urlHotelsContent + '/hotels/popular') 
   .then(response => response.json())
   .then(function(data) {
 
