@@ -1,4 +1,6 @@
-fetch('https://fe-student-api.herokuapp.com/api/hotels/popular') 
+const urlHotelsContent = 'https://fe-student-api.herokuapp.com/api/hotels/popular';
+
+fetch(urlHotelsContent) 
   .then(response => response.json())
   .then(function(data) {
 
@@ -12,7 +14,7 @@ fetch('https://fe-student-api.herokuapp.com/api/hotels/popular')
       <p class='hotels__inform-city'>${elem.country}</p>
     `;
 
-    hotelsInform.innerHTML += content;
+      hotelsInform.innerHTML += content;
     });
   })
   
