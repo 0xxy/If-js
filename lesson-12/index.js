@@ -1,6 +1,6 @@
-const otherInfo = document.getElementsByClassName('other-info')[0];
-const selectForOtherInfo = document.getElementsByClassName('select-for-other-info')[0];
-const ageOfChild = document.getElementsByClassName('age-of-child')[0];
+const otherInfo = document.getElementById('other-info');
+const selectForOtherInfo = document.getElementById('select-for-other-info');
+const ageOfChild = document.getElementById('age-of-child');
 
 selectForOtherInfo.style.display = 'none';
 ageOfChild.style.display = 'none';
@@ -9,24 +9,26 @@ otherInfo.onclick = function() {
   selectForOtherInfo.style.display = 'block';
 }
 
-const minuseInAdults = document.getElementsByClassName('minuse-in-adults')[0];
-const minuseInChildren = document.getElementsByClassName('minuse-in-children')[0];
-const minuseInRooms = document.getElementsByClassName('minuse-in-rooms')[0];
-const pluseInAdults = document.getElementsByClassName('pluse-in-adults')[0];
-const pluseInChildren = document.getElementsByClassName('pluse-in-children')[0];
-const pluseInRooms = document.getElementsByClassName('pluse-in-rooms')[0];
+const minuseInAdults = document.getElementById('minuse-in-adults');
+const minuseInChildren = document.getElementById('minuse-in-children');
+const minuseInRooms = document.getElementById('minuse-in-rooms');
+const pluseInAdults = document.getElementById('pluse-in-adults');
+const pluseInChildren = document.getElementById('pluse-in-children');
+const pluseInRooms = document.getElementById('pluse-in-rooms');
 
-const counterAdults = document.getElementsByClassName('counter-adults')[0];
-const counterChildren = document.getElementsByClassName('counter-children')[0];
-const counterRooms = document.getElementsByClassName('counter-rooms')[0];
+const counterAdults = document.getElementById('counter-adults');
+const counterChildren = document.getElementById('counter-children');
+const counterRooms = document.getElementById('counter-rooms');
 
 const selectAgeChild = document.getElementsByClassName('select-age-child');
 
 function decreaseAdults (event) {
   event.preventDefault();
+  
+  const numbCounterAdults = +counterAdults.innerHTML;
 
-  if (Number(counterAdults.innerHTML)) {
-    counterAdults.innerHTML = Number(counterAdults.innerHTML) - 1;
+  if (numbCounterAdults) {
+    counterAdults.innerHTML = numbCounterAdults - 1;
   }
 }
 
@@ -35,8 +37,10 @@ minuseInAdults.addEventListener('click', decreaseAdults);
 function increaseAdults (event) {
   event.preventDefault();
 
-  if (Number(counterAdults.innerHTML) <= 29) {
-    counterAdults.innerHTML = Number(counterAdults.innerHTML) + 1;
+  const numbCounterAdults = +counterAdults.innerHTML;
+
+  if (numbCounterAdults <= 29) {
+    counterAdults.innerHTML = numbCounterAdults + 1;
   }
 }
 
@@ -50,8 +54,10 @@ function increaseChildren (event) {
 
   ageOfChild.style.display = 'block';
 
-  if (Number(counterChildren.innerHTML) <= 9) {
-    counterChildren.innerHTML = Number(counterChildren.innerHTML) + 1;
+  const numbCounterChildren = +counterChildren.innerHTML;
+  
+  if (numbCounterChildren <= 9) {
+    counterChildren.innerHTML = numbCounterChildren + 1;
     selectAgeChild.append;
 
     for(let i = 0; i <= 17; i++) {
@@ -67,9 +73,10 @@ pluseInChildren.addEventListener('click', increaseChildren);
 function decreaseChildren (event) {
   event.preventDefault();
 
+  const numbCounterChildren = +counterChildren.innerHTML;
 
-  if (Number(counterChildren.innerHTML)) {
-    counterChildren.innerHTML = Number(counterChildren.innerHTML) - 1;
+  if (numbCounterChildren) {
+    counterChildren.innerHTML = numbCounterChildren - 1;
     
     const newSelect = document.getElementsByClassName('new-select-js');
     ageOfChild.removeChild(newSelect);
@@ -81,8 +88,10 @@ minuseInChildren.addEventListener('click', decreaseChildren);
 function decreaseRooms (event) {
   event.preventDefault();
 
-  if (Number(counterRooms.innerHTML)) {
-    counterRooms.innerHTML = Number(counterRooms.innerHTML) - 1;
+  const numbCounterRooms = +counterRooms.innerHTML;
+  
+  if (numbCounterRooms) {
+    counterRooms.innerHTML = numbCounterRooms - 1;
   }
 }
 
@@ -91,8 +100,10 @@ minuseInRooms.addEventListener('click', decreaseRooms);
 function increaseRooms (event) {
   event.preventDefault();
 
-  if (Number(counterRooms.innerHTML) <= 29) {
-    counterRooms.innerHTML = Number(counterRooms.innerHTML) + 1;
+  const numbCounterRooms = +counterRooms.innerHTML;
+
+  if (numbCounterRooms <= 29) {
+    counterRooms.innerHTML = numbCounterRooms + 1;
   }
 }
 

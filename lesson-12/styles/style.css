@@ -284,7 +284,7 @@ input{
   text-align: center;
 } 
 
-.select-for-other-info{
+#select-for-other-info{
   width: 260px;
   height: 160px;
   padding: 10px 22px 22px;
@@ -316,15 +316,15 @@ input{
   border-color: #3077C6;
 } 
 
-.minuse-in-adults{
+#minuse-in-adults{
   margin-left: 60px;
 }
 
-.minuse-in-children{
+#minuse-in-children{
   margin-left: 47px;
 }
 
-.minuse-in-rooms{
+#minuse-in-rooms{
   margin-left: 55px;
 }
 
@@ -337,7 +337,7 @@ input{
   margin-top: 6px;
 }
 
-.age-of-child{
+#age-of-child{
   width: 260px;
   height: 100%;
   padding: 10px 18px 22px;
@@ -347,14 +347,14 @@ input{
   margin-left: 783px;
 }
 
-.text-age-of-child{
+#text-age-of-child{
   font-family: Roboto;
   font-size: 12px;
   line-height: 14px;
   color: #333333;
 }
 
-.age-of-child select{
+#age-of-child select{
   font-family: Roboto;
   font-size: 12px;
   line-height: 14px;
