@@ -8,11 +8,13 @@ fetch(urlHotelsContent + '/hotels/popular')
 
     data.forEach(function(elem) {
       const content = `
-      <a href="#"><img class='hotels__inform-img' src="${elem.imageUrl}" alt="${elem.name}"></a>
-      <p class='hotels__inform-name'>${elem.name}</p>
-      <p class='hotels__inform-city'>${elem.city}</p>
-      <p class='hotels__inform-city'>${elem.country}</p>
-    `;
+        <div>
+          <a href="#"><img class='hotels__inform-img' src="${elem.imageUrl}" alt="${elem.name}"></a>
+          <p class='hotels__inform-name'>${elem.name}</p>
+          <p class='hotels__inform-city'>${elem.city}</p>
+          <p class='hotels__inform-city'>${elem.country}</p>
+        </div>
+      `;
 
       hotelsInform.innerHTML += content;
     });
