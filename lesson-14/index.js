@@ -2,7 +2,7 @@ const urlHotelsContent = 'https://fe-student-api.herokuapp.com/api';
 const hotelsInform = document.getElementById('hotels-inform');
 
 async function getHotels() {
-  let hotels = JSON.parse(sessionStorage.getItem('hotels') || null);
+  let hotels = JSON.parse(sessionStorage.getItem('hotels'));
 
   if(!hotels) {
     const response = await fetch(urlHotelsContent + '/hotels/popular');
