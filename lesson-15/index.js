@@ -1,9 +1,7 @@
 const formEl = document.getElementById('form');
 const urlHotelsContentFile = 'https://fe-student-api.herokuapp.com/api/file';
 
-formEl.addEventListener('submit', eventsWithData);
-
-function eventsWithData(event) {
+const eventsWithData = (event) => {
   event.preventDefault();
 
   const formData = new FormData(formEl);
@@ -14,3 +12,5 @@ function eventsWithData(event) {
   }).then(response => response.json())
     .then(data => console.log(data))
 }
+
+formEl.addEventListener('submit', eventsWithData);
