@@ -10,9 +10,9 @@ const eventsWithData = async (event) => {
     method: 'POST',
     body: formData,
   }).then(response => response.json())
-    .then(data => console.log(data))
+  .then(data => console.log(data))
 
-    .catch((err) => console.log('Fetch problem: ' + err.message))
+  .catch((err) => console.log('Fetch problem: ' + err.message))
 }
 
 formEl.addEventListener('submit', eventsWithData);
