@@ -11,7 +11,6 @@ const eventsWithData = async (event) => {
     body: formData,
   }).then(response => response.json())
   .then(data => console.log(data))
-
   .catch((err) => console.log('Fetch problem: ' + err.message))
 }
 
