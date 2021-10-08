@@ -1,0 +1,1299 @@
+@import url(./fonts.css);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header{   
+  margin: 0 auto;
+  background-color: rgb(8, 6, 92);
+  background-image: url(../images/background.png);
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw ;
+  min-height: 100vh;
+  object-fit: contain;
+}
+
+.contain{
+  max-width: 1264px;
+  padding: 120px 16px;
+  margin: 0 auto;
+}
+
+.header .contain{
+  padding-top: 51px;
+}
+
+.logo-nav{
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo{
+  max-width: 205px;
+  max-height: 40px;
+  margin-left: 0;
+}
+
+.nav{
+  max-width: 343px;
+  max-height: 46px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 0;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.stays{
+  margin-top: 15px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.stays:after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 4px;
+  margin: 12px auto 0;
+  transition: width .3s ease-in-out;
+}
+ 
+.stays:hover:after{
+  background-color:#F5BD41;
+  width: 50px;
+}
+
+.stays:active:after{
+  background-color:#F5BD41;
+  width: 50px;
+}
+
+.attractions{
+  margin: 15px 48px 0 24px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.attractions:after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 4px;
+  margin: 12px auto 0;
+  transition: width .3s ease-in-out;
+}
+ 
+.attractions:hover:after{
+  background-color:#F5BD41;
+  width: 100px;
+}
+
+.attractions:active:after{
+  background-color:#F5BD41;
+  width: 100px;
+}
+
+.nav__acount{
+  margin-left: 24px;
+}
+
+.menu{
+  display: none;
+}
+
+.search-section__title{
+  width: 540px;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 59px;
+  color: #FFFFFF;
+  margin: 196px 0 145px;
+}
+
+.search-form{
+  display: flex;
+  background-color: #ffffff;
+  line-height: 21px;
+  height: 64px;
+  border-radius: 8px;
+}
+
+.search-form__group{
+  display: flex;
+  position: relative;
+}
+
+input{
+  border: none;
+  outline: none;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.destination{
+  max-width: 467px;
+  width: 100%;
+}
+
+.destination__input{
+  width: 100%;
+  border-radius: 8px;
+}
+
+.destination__label{
+  transition: all .25s;
+}
+
+.search-form label{
+  position: absolute;
+  left: 24px;
+  top: calc(50% - 21px / 2);
+}
+
+.check{
+  max-width: 259px;
+  width: 100%;
+  border: 3px solid #F5BD41;
+  border-radius: 8px;
+  display: flex;
+}
+
+.check__label, .other-info__label{
+  display: none;
+  transition: all 0.25s;
+}
+
+.check__label--desktop, .other-info__label--desktop{
+  display: inline-block;
+}
+
+.check__input{
+  width: 50%;
+  border-radius: 8px;
+}
+
+.other-info{
+  max-width: 314px;
+  width: 100%;
+}
+
+.other-info__input{
+  width: 33.333%;
+}
+
+.search-form__button{
+  color: #ffffff;
+  background-color: #3077C6;
+  border-radius: 8px;
+  border: none;
+  max-width: 192px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.destination__input:not(:placeholder-shown) + .destination__label,
+.destination__input:focus + .destination__label,
+.check__input:not(:placeholder-shown) ~ .check__label--desktop,
+.check__input:focus ~ .check__label--desktop,
+.other-info__input:not(:placeholder-shown) ~ .other-info__label--desktop,
+.other-info__input:focus ~ .other-info__label--desktop{
+  transform: translateY(-50px);
+  color: #ffffff;
+  transition: all .25s;
+}
+
+.search-form__group input:first-of-type{
+  padding-left: 25px;
+}
+
+.loupe{
+  display: none;
+}
+
+.apps{
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.google-play{
+  margin-right: 16px;
+}
+ 
+.contain__title{
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 33px;
+  color: #383838;
+}
+ 
+.contain__title:after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 4px;
+  margin: 19px auto 0;
+  transition: width .3s ease-in-out;
+}
+ 
+.contain__title:hover:after{
+  background-color:#F5BD41;
+  width: 100px;
+}
+
+.blocks{
+  margin-top: 80px;
+  display: flex;
+}
+
+.item{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item__image{
+  max-width: 100px;
+  max-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.item__text{
+  padding-top: 33px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+} 
+
+.homes-guests-loves{
+  background-color: #EAF0F9;
+}
+
+.hotels{
+  width: 100%;
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.hotels__inform{
+  width: 25%;
+}
+
+.hotels__inform-img{
+  max-width: 100%;
+  max-height: 100%;
+} 
+
+.hotels__inform:last-child{
+  position: relative;
+}
+
+.hotels__inform-name{
+  margin: 24px 0;
+  font-size: 24px;
+  line-height: 28px;
+  color: #3077C6;
+}
+
+.hotels__inform-city{
+  font-size: 24px;
+  line-height: 28px;
+  color: #BFBFBF;
+}
+
+.hotels__arrow{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: calc(30%); 
+  right: calc(-1%);
+}
+
+.destination-area{
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 84px;
+  background-color: #F3F3F4;
+  border-radius: 8px;
+  max-width: 53%;
+}
+
+.destination-area__tabs{
+  padding: 17px 52px;
+  border-radius: 8px;
+  border: none;
+  font-size: 24px;
+  line-height: 28px;
+  background-color: #F3F3F4;
+  color: #383838;
+  text-decoration: none;
+}
+  
+.destination-area__tabs-places{
+  display: none;
+}
+
+.destination-area__tabs:hover{
+  background-color: #3077C6;
+  color: #FFFFFF;
+}
+  
+.destination-area__tabs:active{
+  background-color: #3077C6;
+  color: #FFFFFF;
+}
+
+.countries{
+  width: 100%;
+  margin-top: 65px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.countries-div{
+  width: 25%;
+}
+
+.countries__img{
+  max-width: 100%;
+  max-height: 100%;
+  margin-bottom: 24px;
+}
+
+.countries__img-text{
+  text-decoration: none;
+  color: #3077C6;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.countriers__arrow-down{
+  max-width: 40px;
+  max-height: 40px;
+  margin-top: 48px;
+  position: absolute;
+  left: 49%;
+}
+
+.countriers__arrow-right{
+  display: none;
+}
+
+.container-for-sign-up{
+  max-width: 1264px;
+  padding: 89px 16px 0;
+  margin: 0 auto;
+}
+
+.sign-up{
+  max-width: 1232px;
+  max-height: 200px;
+  background-color: #EAF0F9;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign-up__form{
+  display: flex;
+  justify-content: start;
+}
+
+.form__img{
+  max-height: 86px;
+  max-width: 86px;
+  margin: 57px 24px;
+}
+
+.form__sign-up{
+  margin: 51px 0 52px;
+  max-height: 97px;
+  max-width: 449px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form__sign-up span{
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.form__sign-up button{
+  padding: 12px 32px;
+  border-radius: 8px;
+  border-color: #3077C6;
+  color: #3077C6;
+  background-color: #FFFFFF;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.sign-up__close{
+  max-width: 26px;
+  max-height: 26px;
+  margin: 24px 24px 0 0;
+}
+
+.guest-reviews{
+  margin-top: 84px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.review__mob-title{
+  display: none;
+}
+
+.review-of-place{
+  max-width: 32.5%;
+  background-color: #EAF0F9;
+}
+
+.review-of-place__img{
+  width: 100%;
+}
+
+.review-of-place__arrow-right{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 25%; 
+  right: -2%;
+  transform: translate(-25%, -2%);
+}
+
+.main-of-review{
+  margin: 24px auto;
+  padding: 0 24px;
+  max-width: 100%;
+  max-height: 58px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-and-city{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name-review-of-place{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #3077C6;
+}
+
+.city-review-of-place{
+  font-size: 18px;
+  line-height: 21px;
+  color: #3077C6;
+}
+
+.rating-review-of-place{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #FFFFFF;
+  padding: 4px 11px;
+  border-radius: 8px;
+  background-color: #10367C;
+  align-self: flex-end;
+}
+
+.quantity-review-of-place{
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #BFBFBF;
+}
+
+.reviewer{
+  width: 199px;
+  height: 64px;
+  margin: 0 0 17px 24px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.reviewer-name{
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.review-user-name{
+  font-size: 18px;
+  line-height: 21px;
+  color: #383838;
+}
+
+.review-user-country{
+  font-size: 18px;
+  line-height: 21px;
+  color: #BFBFBF;
+}
+
+.review-of-place p{
+  margin: 0 24px 66px;
+  font-size: 18px;
+  line-height: 21px;
+  color: #383838;
+}
+
+.review-of-place__balls{
+  display: none;
+}
+
+.footer{
+  background-color: #10367C;
+}
+
+.footer svg{
+  display: none;
+}
+
+.navigation{
+  display: flex;
+}
+
+.navigation ul{
+  width: 33.3333%;
+}
+
+.footer li{
+  margin-bottom: 23px;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 20px; 
+}
+
+.a{
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 20px; 
+  text-decoration: none;
+}
+
+li{
+  list-style-type: none;
+}
+
+.title-of-a{
+  font-size: 20px; 
+  font-weight: 500;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.sign{
+  color: #FFFFFF;
+  margin-top: 64px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+ 
+@media only screen and (max-width: 1032px){
+  .contain{
+    padding: 50px 24px;
+  }
+  
+  .header .contain{
+    padding-top: 24px;
+  }
+  
+  .logo{
+    max-width: 162px;
+    max-height: 32px;
+    margin-left: 0;
+  }
+  
+  .nav{
+    max-width: 114px;
+    max-height: 32px;
+  }
+  
+  .stays{
+    display: none;
+  }
+  
+  .attractions{
+    display: none;
+  }
+  
+  .night{
+    width: 24px;
+    height: 24px;
+  }
+  
+  .nav__acount{
+    margin-left: 20px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .menu{
+    display: flex;
+    margin-left: 20px;
+  }
+  
+  .search-section__title{
+    width: 430px;
+    font-size: 40px;
+    line-height: 35px;
+    margin: 120px 0 80px;
+  }
+  
+  .search-form{
+    flex-direction: column;
+    background-color: #F5BD41;
+    height: unset;
+    padding: 8px;
+    border-radius: unset;
+  }
+  
+  .search-form__group{
+    margin-bottom: 8px;
+  }
+  
+  .search-form input{
+    height: 50px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #383838;
+  }
+  
+  .search-form label{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+  }
+  
+  .destination, .check, .other-info{
+    max-width: unset;
+  }
+
+  .search-form__group.check .check__input,
+  .search-form__group.other-info .other-info__input{
+    padding-left: 8px;
+  }
+
+  .loupe{
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    color: #BFBFBF;
+    top: 16px;
+    left: 12px;
+  }
+  
+ .search-form__group input.destination__input{
+    padding-left: 36px;
+  }
+
+  .search-form label{
+    left: 8px;
+  }
+
+  .search-form__group .destination__label{
+    left: 36px;
+  }
+
+  .check{
+    border: none;
+  }
+ 
+  .check__label, .other-info__label{
+    display: inline-block;
+  }
+  
+  .check__label--desktop, .other-info__label--desktop{
+    display: none;
+  }
+  
+  .check__label:nth-child(4){
+    position: absolute;
+    left: calc(50% + 4px + 8px);
+  }
+
+  .check__input:not(:first-child){
+    margin-left: 8px;
+  }
+  
+  .other-info__input{
+    width: 33.333%;
+    margin-right: -1px;
+  }
+  
+  .search-form .other-info__input{
+    border-radius: 0;
+  }
+
+  .other-info label:nth-child(5){
+    position: absolute;
+    left: calc(33.333% + 8px)
+  }
+
+  .other-info label:nth-child(8){
+    position: absolute;
+    left: calc(33.333% * 2 + 8px)
+  }
+
+  .divider{
+    height: 32px;
+    width: 1px;
+    background-color: #BFBFBF;
+    transform: translateY(33%);
+  }
+
+  .search-form__button{
+    border-radius: 4px;
+    max-width: unset;
+    width: 100%;
+    height: 48px;
+    font-size: 19px;
+    line-height: 22px;
+  }
+  
+  .destination__input:not(:placeholder-shown) + .destination__label,
+  .destination__input:focus + .destination__label,
+  .check__input:not(:placeholder-shown) + .check__label,
+  .check__input:focus + .check__label,
+  .other-info__input:not(:placeholder-shown) + .other-info__label,
+  .other-info__input:focus + .other-info__label{
+    transform: translateY(-11px);
+    color: #383838;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    transition: all .25s;
+  } 
+
+  .apps{
+    margin-top: 60px;
+  }
+  
+  .contain__title{
+    margin-bottom: 0;
+    font-size: 32px;
+    line-height: 30px;
+  }
+   
+  .contain__title:after{
+    display: none;
+  }
+  
+  .blocks{
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+  
+  .item{
+    width: 50%;
+    margin-top: 56px;
+  }
+  
+  .item__image{
+    max-width: 80px;
+    max-height: 80px;
+  }
+   
+  .item__text{
+    padding-top: 20px;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+  } 
+  
+  .hotels{
+    width: 100%;
+    margin-top: 48px;
+    justify-content: center;
+  }
+
+  .disappear-adaptive--tablet{
+    display: none;
+  }
+  
+  .hotels__inform{
+    width: 33.333333%;
+  }
+    
+  .hotels__inform:nth-child(2){
+    margin:0 24px;
+  }
+
+  .hotels__inform-name{
+    margin: 12px 0;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  
+  .hotels__inform-city{
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  .hotels__arrow{
+    width: 32px;
+    height: 32px;
+    top: 34%; 
+    right: -2%;
+  }
+
+  .destination-area{
+    justify-content: center;
+    margin-top: 48px;
+    background-color: unset;
+    border-radius: unset;
+    max-width: 100%;
+  }
+
+  .destination-area__tabs{
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 20px;
+    line-height: 21px;
+  }
+    
+  .destination-area__tabs:nth-child(2){
+    margin: 0 48px;
+  }
+  
+  .destination-area__tabs-places{
+    display: flex;
+  }
+  
+  .destination-area__tabs--desktop{
+    display: none;
+  }
+
+  .countries{
+    margin-top: 36px;
+    justify-content: center;
+  }
+
+  .countries-div{
+    width: 33%;
+  }
+  
+  .countries-div:nth-child(2){
+    margin: 0 24px;
+  }
+
+  .countries__img{
+    margin-bottom: 12px;
+  }
+  
+  .countries__img-text{
+    font-size: 16px;
+    line-height: 18px;
+  }
+  
+  .countriers__arrow-down{
+    display: none;
+  }
+
+  .countriers__arrow-right{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 1%;
+    top: 350%;
+    transform: translate(-1%, -350%);
+  }
+
+  .container-for-sign-up{
+    display: none;
+  }
+
+  .review{
+    background-color: #EAF0F9;
+  }
+
+  .guest-reviews{
+    margin-top: 48px;
+    justify-content: center;
+  }
+  
+  .review__mob-title{
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 30px;
+    color: #383838;
+  }
+  
+  .review-of-place__arrow-right{
+    top: 26%;
+    right: -1%;
+    transform: translate(26%, -1%);
+  } 
+  
+  .review-of-place{
+    max-width: 48%;
+  }
+ 
+  .review-of-place:nth-child(2){
+    margin-left: 24px;
+  } 
+
+  .main-of-review{
+    margin: 15px 0;
+    padding: 0 16px;
+    height: 44px;
+  }
+  
+  .name-review-of-place{
+    font-size: 15px;
+    line-height: 18px;
+  }
+  
+  .city-review-of-place{
+    font-size: 15px;
+    line-height: 18px;
+  }
+  
+  .rating-review-of-place{
+    font-size: 15px;
+    line-height: 20px;
+    padding: 3px 9px;
+  }
+  
+  .quantity-review-of-place{
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  .reviewer{
+    width: 170px;
+    height: 53px;
+    margin: 0 0 17px;
+  }
+  
+  .reviewer-name{
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .review-user-name{
+    font-size: 15px;
+    line-height: 18px;
+  }
+  
+  .review-user-country{
+    font-size: 15px;
+    line-height: 18px;
+  }
+  
+  .review-of-place p{
+    margin: 0;
+    font-size: 15px;
+    line-height: 18px;
+  }
+  
+  .review-of-place__balls{
+    display: flex;
+    justify-content: center;
+    margin-top: 52px;
+  }
+
+  .balls{
+    width: 12px;
+    height: 12px;
+    border: 1px solid #333333;
+    border-radius: 50%;
+    margin-left: 8px;
+  }
+
+  .balls:active{
+    background-color: #333333;
+  }
+
+  .footer .container{
+    max-width: 360px;
+    max-height: 203px;
+    padding: 40px 48px;
+  }
+
+  .footer svg{
+    display: flex;
+    fill: #ffffff;
+    stroke: #FFFFFF;
+    width: 98px;
+    height: 19px;
+    margin: 0 auto 40px ;
+  }
+
+  .a{
+    display: none;
+  }
+
+  .title-of-a{
+    font-size: 15px;
+    display: flex;
+    justify-content: space-around;
+    text-decoration: underline;
+  }
+
+  .sign{
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .contain{
+    padding: 40px 16px;
+  }
+  
+  .header .contain{
+    padding-top: 12px;
+  }
+  
+  .logo{
+    max-width: 122px;
+    max-height: 24px;
+    margin-left: 0;
+  }
+  
+  .nav{
+    max-width: 96px;
+    max-height: 24px;
+  }
+  
+  .night{
+    width: 16px;
+    height: 16px;
+  }
+  
+  .nav__acount{
+    margin-left: 16px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .menu{
+    display: flex;
+    margin-left: 16px;
+  }
+
+  .search-section__title{
+    width: 328px;
+    font-size: 30px;
+    line-height: 35px;
+    margin: 40px 0 31px;
+  }
+  
+  .apps{
+    margin-top: 32px;
+  }
+  
+  .contain__title{
+    margin-bottom: 0;
+    font-size: 28px;
+    line-height: 33px;
+  }
+  
+  .blocks{
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+  
+  .item{
+    width: 100%;
+    margin-top: 32px;
+  }
+  
+  .item__image{
+    max-width: 70px;
+    max-height: 70px;
+  }
+   
+  .item__text{
+    padding-top: 16px;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+  } 
+  
+  .hotels{
+    width: 100%;
+    margin-top: 32px;
+    justify-content: center;
+  }
+
+  .disappear-adaptive{
+    display: none;
+  }
+
+  .hotels__inform{
+    width: 50%;
+  }
+  
+  .hotels__inform:first-child{
+    margin-right: 16px;
+  }
+
+  .hotels__inform:nth-child(2){
+    margin: unset;
+  }
+
+  .hotels__inform-name{
+    margin: 8px 0;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  .hotels__inform-city{
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  .hotels__arrow{
+    max-width: 28px;
+    max-height: 28px;
+    right: -4%;
+  }
+
+  .destination-area{
+    justify-content: space-around;
+    margin-top: 32px;
+    background-color: unset;
+    border-radius: unset;
+    max-width: 100%;
+  }
+  
+  .destination-area__tabs{
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-size: 19px;
+    line-height: 22px;
+  }
+    
+  .destination-area__tabs-places{
+    display: flex;
+  }
+
+  .countries{
+    margin-top: 24px;
+    justify-content: center;
+  }
+  
+  .countries-div{
+    width: 50%;
+  }
+
+  .countries-div:nth-child(2){
+    margin: unset;
+  }
+
+  .countries-first{
+    margin-right: 16px
+  } 
+
+  .countries__img{
+    margin-bottom: 8px;
+  }
+  
+  .countries__img-text{
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  .countriers__arrow-down{
+    display: none;
+  }
+
+  .countriers__arrow-right{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    right: 0%;
+    top: 320%;
+  }
+
+  .review{
+    background-color: #EAF0F9;
+  }
+
+  .guest-reviews{
+    margin-top: 32px;
+    justify-content: center;
+  }
+  
+  .review__mob-title{
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    color: #383838;
+  }
+  
+  .main-of-review{
+    margin: 12px auto;
+    padding: 0;
+    width: 100%;
+    height: 44px;
+  }
+
+  .review-of-place{
+    max-width: 100%;
+  }
+
+  .review-of-place__arrow-right{
+    display: none;
+  }
+  
+  .review-of-place__balls{
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  .balls{
+    width: 8px;
+    height: 8px;
+    border: 1px solid #333333;
+    border-radius: 50%;
+    margin-left: 8px;
+  }
+
+} 
+
