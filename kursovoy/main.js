@@ -28,8 +28,24 @@ const counterRooms = document.getElementById('counter-rooms');
 const selectAgeChild = document.getElementsByClassName('select-age-child');
 const searchForm = document.getElementById('search-form-js');
 const containForAvaibleHotels = document.getElementById('contain-for-avaible-hotels');
+const labelForDesktop = document.getElementById('other-info__label--desktop');
 
 containForAvaibleHotels.style.display = 'none';
+
+let dataForLabel = [
+  {
+    nInAdults: 2,
+  },
+  {
+    nInChildren: 0,
+  },
+  {
+   nInRooms: 1,
+  }
+]
+
+labelForDesktop.innerHTML =
+  `${dataForLabel[0].nInAdults} Adults - ${dataForLabel[1].nInChildren} Children - ${dataForLabel[2].nInRooms} Rooms`
 
 function decreaseAdults (event) {
   event.preventDefault();
@@ -43,6 +59,8 @@ function decreaseAdults (event) {
   if (numbCounterAdults) {
     counterAdults.innerHTML = numbCounterAdults - 1;
   }
+  labelForDesktop.innerHTML =
+  `${--dataForLabel[0].nInAdults} Adults - ${dataForLabel[1].nInChildren} Children - ${dataForLabel[2].nInRooms} Rooms`
 }
 
 minuseInAdults.addEventListener('click', decreaseAdults);
@@ -56,6 +74,8 @@ function increaseAdults (event) {
     minuseInAdults.removeAttribute('disabled');
     counterAdults.innerHTML = numbCounterAdults + 1;
   }
+  labelForDesktop.innerHTML =
+  `${++dataForLabel[0].nInAdults} Adults - ${dataForLabel[1].nInChildren} Children - ${dataForLabel[2].nInRooms} Rooms`
 }
 
 pluseInAdults.addEventListener('click', increaseAdults);
@@ -82,6 +102,8 @@ function increaseChildren (event) {
 
     ageOfChild.appendChild(newSelect);
   }
+  labelForDesktop.innerHTML =
+  `${dataForLabel[0].nInAdults} Adults - ${++dataForLabel[1].nInChildren} Children - ${dataForLabel[2].nInRooms} Rooms`
 }
 
 pluseInChildren.addEventListener('click', increaseChildren);
@@ -101,6 +123,8 @@ function decreaseChildren (event) {
     const newSelect = document.getElementById('new-select-js');
     ageOfChild.removeChild(newSelect);
   }
+  labelForDesktop.innerHTML =
+  `${dataForLabel[0].nInAdults} Adults - ${--dataForLabel[1].nInChildren} Children - ${dataForLabel[2].nInRooms} Rooms`
 }
 
 minuseInChildren.addEventListener('click', decreaseChildren);
@@ -115,6 +139,8 @@ function decreaseRooms (event) {
   if (numbCounterRooms) {
     counterRooms.innerHTML = numbCounterRooms - 1;
   }
+  labelForDesktop.innerHTML =
+  `${dataForLabel[0].nInAdults} Adults - ${dataForLabel[1].nInChildren} Children - ${--dataForLabel[2].nInRooms} Rooms`
 }
 
 minuseInRooms.addEventListener('click', decreaseRooms);
@@ -128,6 +154,8 @@ function increaseRooms (event) {
     minuseInRooms.removeAttribute('disabled');
     counterRooms.innerHTML = numbCounterRooms + 1;
   }
+  labelForDesktop.innerHTML =
+  `${dataForLabel[0].nInAdults} Adults - ${dataForLabel[1].nInChildren} Children - ${++dataForLabel[2].nInRooms} Rooms`
 }
 
 pluseInRooms.addEventListener('click', increaseRooms);
@@ -170,6 +198,8 @@ const urlHotelsContentFile = 'https://fe-student-api.herokuapp.com/api/hotels';
 
 let getDataDestination = async (event) => {
   event.preventDefault();
+  selectForOtherInfo.style.display = 'none';
+  ageOfChild.style.display = 'none';
   containForAvaibleHotels.style.display = 'block';
   
   const avaibleHotels = document.getElementById('avaible-hotels');
@@ -193,6 +223,8 @@ let getDataDestination = async (event) => {
       behavior: 'smooth'
     });
 
+    avaibleHotels.innerHTML = '';
+
     hotels.forEach((elem) => {
       avaibleHotels.innerHTML += `
       <div class='hotels__inform'>
@@ -207,8 +239,13 @@ let getDataDestination = async (event) => {
   catch (err) {
     console.log('Fetch problem: ' + err.message);
   }
-
-  // sessionStorage.setItem('newHotels', JSON.stringify(newHotels))
+  
+  document.getElementById('destination').value = '';
+  document.getElementById('check-in').value = '';
+  document.getElementById('check-out').value = '';
+  document.getElementById('adults').value = '';
+  document.getElementById('children').value = '';
+  document.getElementById('rooms').value = ''; 
 }
 
-searchForm.addEventListener('submit', getDataDestination)  
+searchForm.addEventListener('submit', getDataDestination);
